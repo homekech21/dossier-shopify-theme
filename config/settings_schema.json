@@ -1,12 +1,19 @@
-{
-  "current": "Default",
-  "presets": {
-    "Default": {
-      "colors": {
-        "text": "#000000",
-        "background": "#ffffff",
-        "accent": "#333333"
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "site_title",
+        "label": "Site Title",
+        "default": "Store"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#000000"
       }
-    }
+    ]
   }
-}
+]

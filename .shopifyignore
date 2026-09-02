@@ -1,0 +1,5 @@
+# Shopify theme ignore file
+*.DS_Store
+node_modules/
+.git
+.gitignore

@@ -1,0 +1,60 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">{{ shop.name }}</a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="/collections/all">Shop</a></li>
+        <li><a href="/pages/about">About</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="/cart" class="cart-icon">Cart ({{ cart.item_count }})</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .logo a {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+  }
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .cart-icon {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+  }
+</style>
