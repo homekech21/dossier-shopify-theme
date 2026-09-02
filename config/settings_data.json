@@ -1,0 +1,17 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "colors": {
+        "text": "#000000",
+        "background": "#ffffff",
+        "accent": "#333333",
+        "border": "#e0e0e0"
+      },
+      "typography": {
+        "heading_font": "Montserrat",
+        "body_font": "Poppins"
+      }
+    }
+  }
+}
