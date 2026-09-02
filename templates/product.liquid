@@ -1,0 +1,121 @@
+<div class="product-page">
+  <div class="product-container">
+    <div class="product-gallery">
+      <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}">
+    </div>
+    <div class="product-details">
+      <h1>{{ product.title }}</h1>
+      <p class="product-description">{{ product.description }}</p>
+      <div class="product-price">${{ product.price | money }}</div>
+      
+      <form method="post" action="/cart/add" class="add-to-cart-form">
+        <select name="id" required>
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }}</option>
+          {% endfor %}
+        </select>
+        
+        <div class="quantity-selector">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1">
+        </div>
+        
+        <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .product-page {
+    padding: 40px 20px;
+    background: #fff;
+  }
+
+  .product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .product-gallery {
+    background: #f9f9f9;
+  }
+
+  .product-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .product-details h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .product-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .product-price {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  select, input {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+  }
+
+  .quantity-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .quantity-selector input {
+    width: 80px;
+  }
+
+  .add-to-cart-btn {
+    padding: 15px 40px;
+    background: #000;
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .add-to-cart-btn:hover {
+    background: #333;
+  }
+
+  @media (max-width: 768px) {
+    .product-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .product-details h1 {
+      font-size: 24px;
+    }
+  }
+</style>
